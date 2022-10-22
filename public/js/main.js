@@ -17,7 +17,7 @@ const getinfo = (event) =>{
     event.preventDefault();
     if(cityName.value == "")
     {
-        output.innerHTML = "City Name cannot be empty";
+        output.innerHTML = "City Name cannot be Empty";
         return ;
     }
     // alert(cityName.value);
