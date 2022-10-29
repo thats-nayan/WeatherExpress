@@ -1,4 +1,4 @@
-
+// C:\Program Files\MongoDB\Server\6.0\data\
 const submitBtn = document.querySelector("#submitBtn");
 const day = document.querySelector("#day");
 const today_date = document.querySelector("#today_date");
@@ -26,16 +26,9 @@ const getinfo = (event) =>{
             .then((data) => {
                 output.innerHTML = data.weather[0].main ;
                 temp.innerHTML = Math.floor(data.main.temp - 273)+ "&deg;"+"C";
-                
-                if(data.weather[0].main == "Clear")
-                temp_status.innerHTML = '<i class="fa-solid fa-sun"></i>';
-                else if(data.weather[0].main == "Clouds")
-                temp_status.innerHTML = '<i class="fa-solid fa-cloud"></i>';
-                else
-                {
-                    output.innerHTML = "Cloud Rain";
-                    temp_status.innerHTML = '<i class="fa-solid fa-cloud-rain"></i>';
-                }
+                const icon = data.weather[0].icon;
+                const imgurl = "http://openweathermap.org/img/wn/"+icon+"@2x.png"
+                temp_status.innerHTML = "<img src = '" +imgurl+"'>";
             })
             .catch((error) => {
                 temp.innerHTML = "";

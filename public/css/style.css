@@ -214,7 +214,8 @@ body {
 .main_layer .middle_layer {
   display: flex;
   justify-content: space-around;
-  color: #fff;
+  color: white;
+  background-color: black
 }
 
 .main_layer .middle_layer p,
